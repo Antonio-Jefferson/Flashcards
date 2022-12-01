@@ -1,32 +1,34 @@
-export default function Main() {
+import cards from "../questionsCards"
+import Query from "./Query"
+import Questions from "./Question"
+import { useState } from "react";
+
+export default function Main({setQuestionsFinished}) {
+    const [display, setDisplay] = useState(true)
+
     return (
         <ul>
-            <li>
-                <div className="pergunta-fechada">
-                    <h2>Pergunta 1</h2>
-                    <ion-icon name="play-outline"></ion-icon>
-                </div>
-                <div className="question">
-                    <div className="pergunta">
-                        <div>
-                            O que é JSX?
-                        </div>
-                        <div className="icon">
-                            <ion-icon name="repeat-outline"></ion-icon>
-                        </div>
-                    </div>
-                    <div className="pergunta-aberta">
-                        <div>
-                            JSX é uma sintaxe para escrever HTML dentro do JS
-                        </div>
-                        <div className="Btns">
-                            <button className="erro">Não lembrei</button>
-                            <button className="quase">Quase não lembrei</button>
-                            <button className="zap">Zap!</button>
-                        </div>
-                    </div>
-                </div>
-            </li>
+            {cards.map((c, i) => {
+                return (
+                    <li key={i}>
+                        <Query 
+                            numberQuestion={i} 
+                            display={display}
+                            setDisplay={setDisplay}
+                        />
+                        <Questions 
+                            setQuestionsFinished={setQuestionsFinished}
+                            questions={c}
+                            display={display}
+                        />
+                    </li>
+                )
+            })}
+
         </ul>
     )
 }
+
+
+
+
