@@ -10,7 +10,8 @@ export default function ScreenTwo() {
         <Conteiner>
             <Header />
             <Main
-                setquestionsFinished={setQuestionsFinished}
+                setQuestionsFinished={setQuestionsFinished}
+                questionsFinished={questionsFinished}
              />
             <Footer 
                 questionsFinished={questionsFinished}
@@ -21,7 +22,7 @@ export default function ScreenTwo() {
 
 const Conteiner = styled.div`
   background-color: #FB6B6B;
-  height: calc(100vh - 50px);
+  height:100vh;
   display: flex;
   flex-direction: column;
   align-items: center;

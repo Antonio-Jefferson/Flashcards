@@ -1,14 +1,11 @@
 import styled from "styled-components"
 
-export default function Query({ numberQuestion, display, setDisplay}) {
-
-    const click = (a) => {
-        setDisplay(false)
-    }
+export default function Query({ numberQuestion, click, clicked}) {
+ 
     return (
-        <BoxQuetion display={display} onClick={() => click(numberQuestion)}>
+        <BoxQuetion  finalizado={clicked.includes(numberQuestion)}>
             <h2>Pergunta {numberQuestion + 1}</h2>
-            <ion-icon name="play-outline"></ion-icon>
+            <ion-icon  onClick={() => click(numberQuestion)} name="play-outline"></ion-icon>
         </BoxQuetion>
     )
 }
@@ -21,7 +18,7 @@ const BoxQuetion = styled.div`
     padding: 15px;
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
     border-radius: 5px;
-    display: ${(props)=> props.display? "flex": "none" };
+    display:${props => props.finalizado ? "none" : "flex"};
     align-items: center;
     justify-content: space-between;
     h2{
@@ -31,6 +28,9 @@ const BoxQuetion = styled.div`
         font-size: 16px;
         line-height: 19px;
         color: #333333;
+    }
+    ion-icon{
+        font-size: 35px;
     }
 
 `

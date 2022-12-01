@@ -1,10 +1,10 @@
 import styled from "styled-components"
 import questions from "../questionsCards"
 
-export default function Footer(){
+export default function Footer({questionsFinished}){
     return (
         <Concluded>
-            <span>0</span>
+            <span>{questionsFinished}</span>
             <span>\</span>
             <span>{questions.length}</span>
             <span>CONCLUIDOS</span>
@@ -27,6 +27,7 @@ const Concluded = styled.div`
     font-size: 18px;
     color: #333333;
     padding: 10px;
+    z-index: 3;
 
 
 `

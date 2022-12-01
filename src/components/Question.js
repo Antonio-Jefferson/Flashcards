@@ -1,53 +1,54 @@
+import { useState } from "react"
 import styled from "styled-components"
 
-export default function Questions({questions,display}) {
+export default function Questions({questions, clicked,numberQuestion,setQuestionsFinished,questionsFinished}) {
+    const [show, setshow] = useState(1)
+    const [options, setoptions] = useState('')
+    function btnClicked(element){
+        if(element === "error"){
+           
+
+        }else if(element === "almost"){
+           
+
+        }else if (element === "zap"){
+           
+            
+        }
+
+        completedQuestions();
+    }
+    function completedQuestions(){
+        const cout = questionsFinished
+        setQuestionsFinished(cout + 1)
+    }
+
     return (
-        <BoxQuestions display={display}>
-            <Card >
-                <Front>
-                    <div>
+        <BoxQuestions clicked={clicked.includes(numberQuestion)}>
+                <Front show={show} >
                         {questions.question}
-                    </div>
                     <Incon>
-                        <ion-icon name="repeat-outline"></ion-icon>
+                        <ion-icon onClick={()=>show(setshow(0))}  name="repeat-outline"></ion-icon>
                     </Incon>
                 </Front>
-                < Back>
-                    <div>
+                < Back >
                         {questions.answer}
-                    </div>
                     <Btns>
-                        <button className="erro">Não lembrei</button>
-                        <button className="quase">Quase não lembrei</button>
-                        <button className="zap">Zap!</button>
+                        <button onClick={()=>btnClicked('error')}  className="error">Não lembrei</button>
+                        <button onClick={()=>btnClicked('almost')} className="almost">Quase não lembrei</button>
+                        <button onClick={()=>btnClicked('zap')} className="zap">Zap!</button>
                     </Btns>
                 </Back>
-            </Card>
         </BoxQuestions>
     )
 }
 
 const BoxQuestions = styled.div`
-    display: ${(props)=> props.display? "none":"flex"};
+    display:${(props)=> props.clicked? "flex": "none"};
     width: 300px;
     height: 125px;
     position: relative;
-    &:hover{
-        transform:rotateX(180deg);
-        transition: all 0.5s ease;
-    }
-`
-
-const Card = styled.div`
-    position: absolute;
-    width: 100%;
-    height: 100%;
-
-    transform-style: preserve-3d;
-    &:hover{
-        transform:rotateX(180deg);
-        transition: all 0.5s ease;
-    }
+    margin-bottom: 12px;
 `
 const Front = styled.div`
     width: 100%;
@@ -68,7 +69,7 @@ const Front = styled.div`
     justify-content: space-between;
 
     position: absolute;
-    backface-visibility: hidden;
+    z-index:${(props)=> props.show};
 `
 const Back = styled.div`
     width: 100%;
@@ -85,13 +86,11 @@ const Back = styled.div`
     font-size: 18px;
     color: #333333;
 
-    display: flex;
+    display: ${props => props.clicado ? "none" : "flex"};
     flex-direction: column;
     justify-content: space-between;
 
     position: absolute;
-    backface-visibility: hidden;
-    transform: rotateX(180deg);
   button{
         width: 85.17px;
         height: 37.17px;

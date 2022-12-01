@@ -3,8 +3,19 @@ import Query from "./Query"
 import Questions from "./Question"
 import { useState } from "react";
 
-export default function Main({setQuestionsFinished}) {
-    const [display, setDisplay] = useState(true)
+export default function Main({setQuestionsFinished, questionsFinished}) {
+    const [clicked, setClicked] = useState([])
+    const [display, setDisplay] = useState(false)
+    const [chengeDecor, setChengerDecor] = useState('')
+
+    function click(number) {
+        const contains = clicked.includes(number)
+
+        if (!contains) {
+            setClicked([...clicked, number])
+            setDisplay(true)
+        }
+    }
 
     return (
         <ul>
@@ -12,14 +23,17 @@ export default function Main({setQuestionsFinished}) {
                 return (
                     <li key={i}>
                         <Query 
-                            numberQuestion={i} 
-                            display={display}
-                            setDisplay={setDisplay}
+                            numberQuestion={i}
+                            clicked={clicked}
+                            click={click}
                         />
                         <Questions 
+                            clicked={clicked}
+                            setDisplay={display}
+                            numberQuestion={i}
                             setQuestionsFinished={setQuestionsFinished}
+                            questionsFinished={questionsFinished}
                             questions={c}
-                            display={display}
                         />
                     </li>
                 )
