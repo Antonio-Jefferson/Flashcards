@@ -1,15 +1,15 @@
 import Footer from "./Footer";
 import Header from "./Header";
-import Main from "./Main";
 import styled from "styled-components";
 import { useState } from "react";
+import RenderCards from "./RenderCards";
 
 export default function ScreenTwo() {
     const [questionsFinished, setQuestionsFinished] = useState(0)
     return (
         <Conteiner>
             <Header />
-            <Main
+            <RenderCards
                 setQuestionsFinished={setQuestionsFinished}
                 questionsFinished={questionsFinished}
              />
