@@ -5,7 +5,7 @@ export default function Query({ numberQuestion, setLayout, icon, corIcon, text})
     return (
         <BoxQuetion data-test="flashcard" decoration={text}  color={corIcon}>
             <h2 data-test="flashcard-text" >Pergunta {numberQuestion + 1}</h2>
-            <ion-icon data-test={icon} onClick={()=>setLayout('front')} name={icon} ></ion-icon>
+            <ion-icon data-test="play-btn" onClick={()=>setLayout('front')} name={icon} ></ion-icon>
         </BoxQuetion>
     )
 }
