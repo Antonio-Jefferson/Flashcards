@@ -4,8 +4,8 @@ import questions from "../questionsCards"
 export default function Footer({questionsFinished}){
     return (
         <Concluded data-test="footer">
-            <span >{questionsFinished}</span>
-            <span>\</span>
+            <span>{questionsFinished}</span>
+            <span>/</span>
             <span >{questions.length}</span>
             <span>CONCLUIDOS</span>
         </Concluded>

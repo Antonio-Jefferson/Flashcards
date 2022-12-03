@@ -11,8 +11,10 @@ export default function Query({ numberQuestion, setLayout, icon, corIcon, text,c
             <h2 data-test="flashcard-text" >Pergunta {numberQuestion + 1}</h2>
             <button 
              disabled={clickd} 
-             onClick={desativar}>
-                <ion-icon data-test="play-btn"  name={icon} ></ion-icon>
+             onClick={desativar}
+             data-test="play-btn"
+             >
+                <ion-icon data-test={icon}  name={icon} ></ion-icon>
             </button>
         </BoxQuetion>
     )
