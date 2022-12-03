@@ -1,4 +1,4 @@
-import { useState } from "react"
+
 import styled from "styled-components"
 
 export default function BackFace({answer, questionsFinished, setQuestionsFinished, setLayout,setCorIcon, setIcon, setText}) {
@@ -12,7 +12,7 @@ export default function BackFace({answer, questionsFinished, setQuestionsFinishe
         }else if(element === "almost"){
             setLayout('query')
             setCorIcon("orange")
-            setIcon("alert-circle")
+            setIcon("help-circle")
             setText("line-through")
 
         }else if (element === "zap"){
