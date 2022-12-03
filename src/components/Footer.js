@@ -3,7 +3,7 @@ import questions from "../questionsCards"
 
 export default function Footer({questionsFinished}){
     return (
-        <Concluded>
+        <Concluded data-test="footer">
             <span>{questionsFinished}</span>
             <span>\</span>
             <span>{questions.length}</span>

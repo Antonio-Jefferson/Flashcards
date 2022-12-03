@@ -12,9 +12,16 @@ export default function Header() {
 }
 
 const Logo = styled.div`
+    background-color: #FB6B6B;
+    width: 100%;
+    height: 100px;
     display: flex;
     align-items: center;
-    margin: 40px 0 20px 0;
+    padding: 2px 80px;
+    margin: 0px 0 20px 0;
+    position: fixed;
+    top: 0px;
+    z-index: 4;
 
    h1{
     font-family: 'Righteous';

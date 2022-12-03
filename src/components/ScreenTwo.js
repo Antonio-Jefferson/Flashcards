@@ -22,11 +22,9 @@ export default function ScreenTwo() {
 
 const Conteiner = styled.div`
   background-color: #FB6B6B;
-  height:100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0px;
-  padding: 0px;
-  padding-bottom: 200px;
+  padding-top: 90px;
+  padding-bottom: 100px;
 `

@@ -6,6 +6,7 @@ export default function RenderCards({ setQuestionsFinished, questionsFinished}) 
         cards.map((ques, i) =>
 
             <Main
+                data-test="flashcard"
                 key={i}
                 setQuestionsFinished={setQuestionsFinished}
                 questionsFinished={questionsFinished}

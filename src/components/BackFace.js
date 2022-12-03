@@ -3,21 +3,18 @@ import styled from "styled-components"
 export default function BackFace({answer, questionsFinished, setQuestionsFinished, setLayout,setCorIcon, setIcon, setText}) {
     function btnClicked(element){
         if(element === "error"){
-            alert('entrou aqui')
             setLayout('query')
             setCorIcon("red")
             setIcon("close-circle")
             setText("line-through")
 
         }else if(element === "almost"){
-            alert('entrou aqui')
             setLayout('query')
             setCorIcon("orange")
             setIcon("alert-circle")
             setText("line-through")
 
         }else if (element === "zap"){
-            alert('entrou aqui')
             setLayout('query')
             setCorIcon("green")
             setIcon("checkmark-circle")
@@ -34,12 +31,12 @@ export default function BackFace({answer, questionsFinished, setQuestionsFinishe
         setQuestionsFinished(cout + 1)
     }
     return (
-        < Back >
+        < Back data-test="flashcard-text" >
             {answer}
             <Btns>
-                <button onClick={() => btnClicked('error')} className="error">Não lembrei</button>
-                <button onClick={() => btnClicked('almost')} className="almost">Quase não lembrei</button>
-                <button onClick={() => btnClicked('zap')} className="zap">Zap!</button>
+                <button data-test="no-btn" onClick={() => btnClicked('error')} className="error">Não lembrei</button>
+                <button data-test="partial-btn" onClick={() => btnClicked('almost')} className="almost">Quase não lembrei</button>
+                <button data-test="zap-btn" onClick={() => btnClicked('zap')} className="zap">Zap!</button>
             </Btns>
         </Back>
 
