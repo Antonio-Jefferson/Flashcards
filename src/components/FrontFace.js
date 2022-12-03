@@ -1,8 +1,8 @@
 import styled from "styled-components"
 export default function FrontFace({questions, setLayout}) {
     return (
-        <Front data-test="flashcard-text">
-            {questions}
+        <Front data-test="flashcard">
+            <p data-test="flashcard-text" >{questions}</p>
             <Incon>
                 <ion-icon data-test="turn-btn" onClick={()=> setLayout('back')}  name="repeat-outline"></ion-icon>
             </Incon>

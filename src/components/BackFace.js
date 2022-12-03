@@ -31,8 +31,8 @@ export default function BackFace({answer, questionsFinished, setQuestionsFinishe
         setQuestionsFinished(cout + 1)
     }
     return (
-        < Back data-test="flashcard-text" >
-            {answer}
+        < Back data-test="flashcard" >
+            <p data-test="flashcard-text">{answer}</p>
             <Btns>
                 <button data-test="no-btn" onClick={() => btnClicked('error')} className="error">Não lembrei</button>
                 <button data-test="partial-btn" onClick={() => btnClicked('almost')} className="almost">Quase não lembrei</button>
