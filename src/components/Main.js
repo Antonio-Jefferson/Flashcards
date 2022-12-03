@@ -9,12 +9,15 @@ export default function Main({ setQuestionsFinished, questionsFinished, question
     const [corIcon, setCorIcon] = useState('#333')
     const [icon, setIcon] = useState('play-outline')
     const [text, setText] = useState('') /*line-through*/
+    const [clickd, setClick] = useState('')
    
     return (
         <ul>
             <li>
                 {layout === "query" &&
                     <Query
+                        clickd={clickd}
+                        setClick={setClick}
                         key={key}
                         numberQuestion={i}
                         setLayout={setLayout}

@@ -1,3 +1,4 @@
+import { useState } from "react"
 import styled from "styled-components"
 
 export default function BackFace({answer, questionsFinished, setQuestionsFinished, setLayout,setCorIcon, setIcon, setText}) {
@@ -26,9 +27,10 @@ export default function BackFace({answer, questionsFinished, setQuestionsFinishe
     }
     
     function completedQuestions(){
-        console.log('entrei aqui')
         const cout = questionsFinished
-        setQuestionsFinished(cout + 1)
+        if(cout !== 8){
+            setQuestionsFinished(cout + 1)
+        }
     }
     return (
         < Back data-test="flashcard" >

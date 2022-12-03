@@ -1,11 +1,19 @@
+
 import styled from "styled-components"
 
-export default function Query({ numberQuestion, setLayout, icon, corIcon, text}) {
- 
+export default function Query({ numberQuestion, setLayout, icon, corIcon, text,clickd, setClick }) {
+   function desativar(){
+        setLayout('front')
+        setClick('true')
+   }
     return (
         <BoxQuetion data-test="flashcard" decoration={text}  color={corIcon}>
             <h2 data-test="flashcard-text" >Pergunta {numberQuestion + 1}</h2>
-            <ion-icon data-test="play-btn" onClick={()=>setLayout('front')} name={icon} ></ion-icon>
+            <button 
+             disabled={clickd} 
+             onClick={desativar}>
+                <ion-icon data-test="play-btn"  name={icon} ></ion-icon>
+            </button>
         </BoxQuetion>
     )
 }
@@ -33,6 +41,10 @@ const BoxQuetion = styled.div`
     ion-icon{
         font-size: 35px;
         color:${(props)=> props.color};
+    }
+    button{
+        border: none;
+        background-color: transparent;
     }
 
 `
