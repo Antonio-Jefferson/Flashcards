@@ -1,10 +1,11 @@
 import styled from "styled-components"
+import img2 from "../assets/seta_virar.png"
 export default function FrontFace({questions, setLayout}) {
     return (
         <Front data-test="flashcard">
             <p data-test="flashcard-text" >{questions}</p>
             <Incon>
-                <ion-icon data-test="turn-btn" onClick={()=> setLayout('back')}  name="repeat-outline"></ion-icon>
+                <img data-test="turn-btn" onClick={()=> setLayout('back')} src={img2}/>
             </Incon>
         </Front>
     )
@@ -30,7 +31,7 @@ const Front = styled.div`
 `
 const Incon = styled.div`
     position: relative;
-    ion-icon{
+    img{
         position: absolute;
         right: 10px;
         bottom: 10px;

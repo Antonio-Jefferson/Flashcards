@@ -3,11 +3,12 @@ import Query from "./Query"
 import { useState } from "react";
 import FrontFace from "./FrontFace";
 import BackFace from "./BackFace";
+import img1 from "../assets/seta_play.png"
 
 export default function Main({ setQuestionsFinished, questionsFinished, question, answer, i, key }) {
     const [layout, setLayout] = useState('query')
     const [corIcon, setCorIcon] = useState('#333')
-    const [icon, setIcon] = useState('play-outline')
+    const [icon, setIcon] = useState(img1)
     const [text, setText] = useState('') /*line-through*/
     const [clickd, setClick] = useState('')
    

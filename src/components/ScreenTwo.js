@@ -22,6 +22,7 @@ export default function ScreenTwo() {
 
 const Conteiner = styled.div`
   background-color: #FB6B6B;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;

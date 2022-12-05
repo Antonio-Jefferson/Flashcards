@@ -21,7 +21,6 @@ const Concluded = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 4px;
     font-family: 'Recursive';
     font-weight: 400;
     font-size: 18px;

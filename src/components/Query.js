@@ -14,7 +14,7 @@ export default function Query({ numberQuestion, setLayout, icon, corIcon, text,c
              onClick={desativar}
              data-test="play-btn"
              >
-                <ion-icon data-test={icon}  name={icon} ></ion-icon>
+                <img data-test={icon}  src={icon} />
             </button>
         </BoxQuetion>
     )

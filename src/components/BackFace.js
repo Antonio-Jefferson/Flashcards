@@ -1,24 +1,27 @@
 
 import styled from "styled-components"
+import img3 from "../assets/icone_certo.png"
+import img4 from "../assets/icone_erro.png"
+import img5 from "../assets/icone_quase.png"
 
 export default function BackFace({answer, questionsFinished, setQuestionsFinished, setLayout,setCorIcon, setIcon, setText}) {
     function btnClicked(element){
         if(element === "error"){
             setLayout('query')
             setCorIcon("red")
-            setIcon("close-circle")
+            setIcon(img4)
             setText("line-through")
 
         }else if(element === "almost"){
             setLayout('query')
             setCorIcon("orange")
-            setIcon("help-circle")
+            setIcon(img5)
             setText("line-through")
 
         }else if (element === "zap"){
             setLayout('query')
             setCorIcon("green")
-            setIcon("checkmark-circle")
+            setIcon(img3)
             setText("line-through")
             
         }
