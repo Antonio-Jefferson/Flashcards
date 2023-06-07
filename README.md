@@ -1,70 +1,71 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Flashcards 
 
-## Available Scripts
+Flashcards is a powerful learning tool consisting of flashcards with a question or statement on the front and the corresponding answer on the back. They are widely used to improve memory retention and promote effective learning through the use of Active Recall and Spaced Repetition methodologies.
 
-In the project directory, you can run:
+## Installation
 
-### `npm start`
+How to run the project on your machine:
+```bash
+  git clone git@github.com:Antonio-Jefferson/Flashcards.git
+```
+Open the file:
+```bash
+  cd folder-name
+```
+install the dependencies:
+```bash
+  npm install
+```
+run the project:
+```bash
+  npm start
+````
+Abra o aplicativo no navegador em http://localhost:3000
+## 🛠 Skills
+The Flashcards mobile site project will be implemented using the following technologies:
+- HTML
+- JavaScript
+- Node
+- React
+- Styled-Component
+- React-Router
+- Axios
+- Figma.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
+##### Componentization and Data
+- Page elements will be componentized with React in separate files. The page's dynamic data, such as the "deck" and "flashcards", will be represented as arrays or objects in JavaScript and rendered on the screen.
 
-### `npm test`
+##### flashcards
+- All flashcards will be displayed on the screen flipped and indexed by numbers, hiding the question or term they contain. When clicking on the "play" arrow of a flashcard, the corresponding question or term will be revealed, without animations. To view the flashcard response, the user must click on the "flip" icon on the flashcard.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+##### When flipping a flashcard...
+- The correct answer to the question will be displayed, along with three buttons: "Didn't remember", "Almost didn't remember" and "Zap". When clicking on any of the buttons, the flashcard will be marked as answered and will have its status changed according to the user's choice:
 
-### `npm run build`
+    - Incorrect flashcard (I didn't remember)
+    - Correct flashcard with effort (Almost forgot)
+    - Flashcard correct immediately (Zap!)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- After being answered, the question will be closed, with its text crossed out in the color corresponding to its status and an icon. It cannot be opened again.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### completion counter
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- The counter will show how many questions the user has already answered and how many questions there are in total. Whenever a flashcard is answered (by clicking the buttons), the number of flashcards answered will be updated. The number of flashcards answered can never be greater than the total number of flashcards.
 
-### `npm run eject`
+## Screenshots
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Deploy
+link: https://projeto9-zaprecall-rho-puce.vercel.app/
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🔗 Links
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)]()
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/antjefferson/)
+[![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/ant_jeff_)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
