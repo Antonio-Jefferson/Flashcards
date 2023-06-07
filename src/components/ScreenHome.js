@@ -4,7 +4,7 @@ export default function ScreenHome({play, setPlay}){
     return (
         <Screen iniciar={play}>
             <img src={logotipo} alt="Logo inicial" />
-            <h1>ZapRecall</h1>
+            <h1>Flashcards</h1>
             <button data-test="start-btn" onClick={() => setPlay(true)} >Iniciar Recall!</button>
         </Screen>
     )
